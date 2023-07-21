@@ -1,7 +1,7 @@
 #ifndef TREENODE_H
 #define TREENODE_H
 
-namespace treeforest{
+namespace treeforest::nodes{
     /**
      * Class that represents a node of a tree
      * @typedef T type of the content of the node
@@ -45,7 +45,7 @@ namespace treeforest{
              * Method that returns the reference to the parent node
              * @return reference to the parent node
             */
-            T* unsetParentNode();
+            TreeNode<T>* unsetParentNode();
 
             /**
              * Method that try to insert a node into a specific position
@@ -59,32 +59,39 @@ namespace treeforest{
             int setChildrenNode(const int pos, TreeNode<T>* const node, bool force_replace=false);
             
             /**
+             * Method that get the node in the specific position
+             * @param pos position in which there is the node to retrieve
+             * @return the node in the giving position, nullptr is the position is invalid or the node itself is nullptr
+            */
+            TreeNode<T>* getChildrenNode(const int pos);
+
+            /**
              * Method that unset the node in the specific position
              * @param pos position in which there is the node to retrieve
              * @return the node in the giving position, nullptr is the position is invalid or the node itself is nullptr
             */
-            T* unsetChildrenNode(const int pos);
+            TreeNode<T>* unsetChildrenNode(const int pos);
 
             /**
              * Operator overload used to compare two nodes
              * @param node node to compare
              * @return true if the content of two nodes are equal, false otherwise
             */
-            bool operator==(TreeNode<T> const node) const;
+            bool operator==(const TreeNode<T>& node) const;
 
             /**
              * Operator overload used to compare two nodes
              * @param node node to compare
              * @return true if the current node has a content bigger than the passed node, false otherwise
             */
-            bool operator>(TreeNode<T> const node) const;
+            bool operator>(const TreeNode<T>& node) const;
             
             /**
              * Operator overload used to compare two nodes
              * @param node node to compare
              * @return true if the current node has a content smaller than the passed node, false otherwise
             */
-            bool operator<(TreeNode<T> const node) const;
+            bool operator<(const TreeNode<T>& node) const;
             
             /**
              * Destructor of the class that destroy the content and set all pointers to nullptr
@@ -98,8 +105,8 @@ namespace treeforest{
             }
     };
 
-    #include "TreeNode.hpp"
-
 }
+
+#include "TreeNode.hpp"
 
 #endif
