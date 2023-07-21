@@ -73,6 +73,12 @@ namespace treeforest::nodes{
             TreeNode<T>* unsetChildrenNode(const int pos);
 
             /**
+             * Method that delete the node in the specific position
+             * @param pos position in which there is the node to retrieve
+            */
+            void deleteChildrenNode(const int pos);
+
+            /**
              * Operator overload used to compare two nodes
              * @param node node to compare
              * @return true if the content of two nodes are equal, false otherwise

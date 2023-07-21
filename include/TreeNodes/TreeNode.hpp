@@ -57,6 +57,13 @@ namespace treeforest::nodes{
     }
 
     template<typename T>
+    void TreeNode<T>::deleteChildrenNode(const int pos){
+        if(pos>=0 && pos<this->children_size && this->children[pos]|=nullptr){
+            delete this->children[pos];
+        }
+    }
+
+    template<typename T>
     bool TreeNode<T>::operator==(const TreeNode<T>& node) const{
         return this->content==node;
     }
