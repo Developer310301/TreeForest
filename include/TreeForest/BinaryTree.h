@@ -23,18 +23,18 @@ namespace treeforest{
             BinaryTree() : root(nullptr){}
 
             /**
-             * Method that will add a reference to a @typedef{T} type object to the tree, only if the pointer is not nullptr
+             * Method that will add a reference to a T type object to the tree, only if the pointer is not nullptr
              * @param value object to add to the tree
              * @return reference to the node where the object is placed
             */
-            nodes::BinaryTreeNode<T>* add(T* value);
+            nodes::BinaryTreeNode<T>* add(T value);
 
             /**
              * Method that will remove (NOT delete) the passed object from the tree and it return the reference to the removed object
              * @param value object to remove from the tree
              * @return reference to the removed object, nullptr if not found
             */
-            T* remove(T* value);
+            T* remove(T value);
 
             /**
              * Method that will remove AND ERASE the passed object from the tree
@@ -42,7 +42,7 @@ namespace treeforest{
              * @return 0 if the object is not found or uncapeable to delete;
              * @return 1 if the object is correctly deleted
             */
-            int deleteObj(T* value);
+            int deleteObj(T value);
 
             /**
              * Method that find a specific value in the tree
@@ -50,19 +50,19 @@ namespace treeforest{
              * @return 0 if the object doesn't exist in the tree;
              * @return 1 if the passed object is found
             */
-            int find(T* value);
+            int find(T value);
 
             /**
-             * Method that get a specific object in the tree
+             * Method that get a reference to a specific object in the tree
              * @param value object to find and retrieve
              * @return object found;
              * @return nullptr if the passed object doesn't exist in the tree
             */
-            T* get(T* value);
+            T* get(T value);
             
     };
 }
 
-#include "BinaryTree.hpp"
+#include "TreeForest/BinaryTree.hpp"
 
 #endif
