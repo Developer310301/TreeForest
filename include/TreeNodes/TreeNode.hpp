@@ -1,13 +1,13 @@
 namespace treeforest::nodes{
 
     template<typename T>
-    void TreeNode<T>::setContent(T* const node_content){
+    void TreeNode<T>::setContent(T const node_content){
         this->content = node_content;
     }
 
     template<typename T>
     T* TreeNode<T>::getContent(){
-        return this->content;
+        return &this->content;
     }
 
     template<typename T>
@@ -65,17 +65,18 @@ namespace treeforest::nodes{
 
     template<typename T>
     bool TreeNode<T>::operator==(const TreeNode<T>& node) const{
-        return this->content==node;
+        return this->content == node.content;
     }
 
     template<typename T>
     bool TreeNode<T>::operator>(const TreeNode<T>& node) const{
-        return this->content>node;
+        printf("%d > %d = %d\n", this->content, node.content, this->content > node.content);
+        return this->content > node.content;
     }
 
     template<typename T>
     bool TreeNode<T>::operator<(const TreeNode<T>& node) const{
-        return this->content<node;
+        return this->content < node.content;
     }
 
 }

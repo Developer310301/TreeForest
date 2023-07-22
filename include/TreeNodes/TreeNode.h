@@ -9,7 +9,7 @@ namespace treeforest::nodes{
     template<typename T>
     class TreeNode{
         private:
-            T* content;
+            T content;
             unsigned long children_size;
             TreeNode<T>** children;
             TreeNode<T>* parent_node;
@@ -22,16 +22,16 @@ namespace treeforest::nodes{
              * @param node_content pointer to the content of the current node (default nullptr)
              * @param parent_node pointer to the parent node (default nullptr)
             */
-            TreeNode(const unsigned long children_number, T* node_content=nullptr, TreeNode<T>* parent_node=nullptr) : children_size(children_number), children(new TreeNode<T>*[children_number]), content(node_content), parent_node(parent_node){}
+            TreeNode(const unsigned long children_number, T node_content=nullptr, TreeNode<T>* parent_node=nullptr) : content(node_content), children_size(children_number), children(new TreeNode<T>*[children_number]), parent_node(parent_node){}
             
             /**
              * Method that set the content of the node
              * @param node_content pointer to the content of the node
             */
-            void setContent(T* const node_content);
+            void setContent(T const node_content);
             /**
              * Method that return the content of the node
-             * @return Content of the node
+             * @return pointer to the content of the node
             */
             T* getContent();
 
@@ -40,6 +40,14 @@ namespace treeforest::nodes{
              * @param node pointer to the parent node
             */
             void setParentNode(TreeNode<T>* const node=nullptr);
+
+            /**
+             * Method that get the reference to the parent node
+             * @return pointer to the parent node
+            */
+            TreeNode<T>* getParentNode(){
+                return this->parent_node;
+            }
 
             /**
              * Method that returns the reference to the parent node
@@ -104,10 +112,10 @@ namespace treeforest::nodes{
             */
             ~TreeNode(){
                 parent_node=nullptr;
-                for(int i=0;i<this->children_size;i++){
+                for(unsigned int i=0;i<this->children_size;i++){
                     children[i]=nullptr;
                 }
-                delete content;
+                delete[] children;
             }
     };
 

@@ -19,7 +19,7 @@ namespace treeforest::nodes{
              * @param node_content content of the current node
              * @param parent_node reference of parent node
             */
-            BinaryTreeNode(T* node_content=nullptr, T* parent_node=nullptr) : TreeNode<T>(2,node_content,parent_node){}
+            BinaryTreeNode(T node_content=nullptr, TreeNode<T>* parent_node=nullptr) : TreeNode<T>(2,node_content,parent_node){}
 
             /**
              * Method that set the left child of the current node
@@ -56,6 +56,12 @@ namespace treeforest::nodes{
              * @return right child node that will be unsetted
             */
             BinaryTreeNode<T>* unsetRightChild() { return (BinaryTreeNode<T>*)this->unsetChildrenNode(1); }
+
+            /**
+             * Method that get the parent node
+             * @return pointer to the parent node
+            */
+            BinaryTreeNode<T>* getParentNode() { return (BinaryTreeNode<T>*)TreeNode<T>::getParentNode(); }
 
     };
 
