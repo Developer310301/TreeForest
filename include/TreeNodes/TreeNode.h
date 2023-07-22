@@ -22,7 +22,7 @@ namespace treeforest::nodes{
              * @param node_content pointer to the content of the current node (default nullptr)
              * @param parent_node pointer to the parent node (default nullptr)
             */
-            TreeNode(const unsigned long children_number, T* node_content=nullptr, T* parent_node=nullptr) : children_size(children_number), children(new TreeNode<T>[children_number]), content(node_content), parent_node(parent_node){}
+            TreeNode(const unsigned long children_number, T* node_content=nullptr, TreeNode<T>* parent_node=nullptr) : children_size(children_number), children(new TreeNode<T>*[children_number]), content(node_content), parent_node(parent_node){}
             
             /**
              * Method that set the content of the node
