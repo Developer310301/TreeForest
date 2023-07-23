@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.5)
 set(PROJECT_NAME TreeForestTest)
 set(LIBRARY_NAME TreeForest)
 
+enable_testing()
+
 project(${PROJECT_NAME})
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g")
@@ -43,3 +45,21 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
+
+# Add Tests
+file(GLOB TEST_UNITS
+    "test/test_*.cpp"
+)
+foreach(FILE_PATH ${TEST_UNITS})
+    get_filename_component(FILE_NAME ${FILE_PATH} NAME_WE)
+    add_executable(run_${FILE_NAME} ${FILE_PATH})
+    target_include_directories(run_${FILE_NAME} PRIVATE
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+    )
+    target_link_libraries(run_${FILE_NAME} PRIVATE
+        ${LIBRARY_NAME}
+    )
+    add_test(run_${FILE_NAME} ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/run_${FILE_NAME})
+endforeach()
+
+
