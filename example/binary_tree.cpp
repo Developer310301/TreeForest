@@ -12,6 +12,5 @@ void setup(){
 }
 
 void loop(){
-    tree.find(23);
-    tree.find(34);
+    ///Perfom operations on BST
 }
