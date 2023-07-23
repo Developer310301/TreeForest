@@ -25,7 +25,7 @@ TreeForest is a versatile C++ library designed for microcontroller boards to eff
 3. Clone this repository into the "lib" directory of your PlatformIO project:
 
 ```bash
-git clone https://github.com/your_username/TreeForest.git
+git clone https://github.com/Developer310301/TreeForest.git
 ```
 
 4. Now, you can include the library in your project by adding the following line to your source files:
