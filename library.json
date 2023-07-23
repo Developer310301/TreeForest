@@ -1,0 +1,23 @@
+{
+    "name": "TreeForest",
+    "version": "1.0.0",
+    "description": "A simple library that implements tree structures and algorithms",
+    "keywords": "tree, algorithms, maps, map. key, value",
+    "repository":
+    {
+      "type": "git",
+      "url": "https://github.com/Developer310301/TreeForest.git"
+    },
+    "authors":
+    [
+      {
+        "name": "Barbato Federico",
+        "email": "barbato.federico01@outlook.com",
+        "maintainer": true
+      }
+    ],
+    "license": "GNUv3",
+    "dependencies": {},
+    "frameworks": "*",
+    "platforms": "*"
+  }
