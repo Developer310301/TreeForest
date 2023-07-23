@@ -96,6 +96,13 @@ namespace treeforest::nodes{
             /**
              * Operator overload used to compare two nodes
              * @param node node to compare
+             * @return true if the content of two nodes are not equal, false otherwise
+            */
+            bool operator!=(const TreeNode<T>& node) const;
+
+            /**
+             * Operator overload used to compare two nodes
+             * @param node node to compare
              * @return true if the current node has a content bigger than the passed node, false otherwise
             */
             bool operator>(const TreeNode<T>& node) const;

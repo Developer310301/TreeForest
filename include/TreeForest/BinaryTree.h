@@ -30,19 +30,12 @@ namespace treeforest{
             nodes::BinaryTreeNode<T>* add(T value);
 
             /**
-             * Method that will remove (NOT delete) the passed object from the tree and it return the reference to the removed object
-             * @param value object to remove from the tree
-             * @return reference to the removed object, nullptr if not found
-            */
-            T* remove(T value);
-
-            /**
              * Method that will remove AND ERASE the passed object from the tree
              * @param value object to delete from the tree
              * @return 0 if the object is not found or uncapeable to delete;
              * @return 1 if the object is correctly deleted
             */
-            int deleteObj(T value);
+            int remove(T value);
 
             /**
              * Method that find a specific value in the tree

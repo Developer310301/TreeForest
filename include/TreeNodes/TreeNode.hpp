@@ -69,8 +69,13 @@ namespace treeforest::nodes{
     }
 
     template<typename T>
+    bool TreeNode<T>::operator!=(const TreeNode<T>& node) const{
+        return this->content != node.content;
+    }
+
+
+    template<typename T>
     bool TreeNode<T>::operator>(const TreeNode<T>& node) const{
-        printf("%d > %d = %d\n", this->content, node.content, this->content > node.content);
         return this->content > node.content;
     }
 
