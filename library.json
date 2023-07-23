@@ -16,7 +16,7 @@
         "maintainer": true
       }
     ],
-    "license": "GNUv3",
+    "license": "GPL-3.0-or-later",
     "dependencies": {},
     "frameworks": "*",
     "platforms": "*"
